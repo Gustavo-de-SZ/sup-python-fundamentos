@@ -14,8 +14,9 @@ def main():
     # exercicio_variaveis.exercicios_dados_produto()
     # 
     # resolucao.resolver()
-    resolucao.exercicio_1()
-    
+    # resolucao.exercicio_1()
+    # exercicio_crud.crud()
+    resolucao.exercicio_4()
 
 
 

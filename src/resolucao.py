@@ -87,10 +87,10 @@ def exercicio_1():
     
     for i in range(0, len(usuarios)):
         usuario = usuarios[i]
-        assinatura = usuario.get("assinatura")
+        assinatura = usuario.get("assinatura", {}       )
         plano = assinatura.get("plano")
         
-        dados_pessoais = usuario.get("dados_pessoais")
+        dados_pessoais = usuario.get("dados_pessoais", {})
         nome = dados_pessoais.get("nome")
         
         dados = {
@@ -100,25 +100,83 @@ def exercicio_1():
         
         if plano == "Free":
             free.append(dados)
-        escrever_json(free, "data/free.json")
+    escrever_json(free, "data/free.json")
 
 def exercicio_2():
-     usuarios: List[dict[str, any]] = ler_json("data/usuarios.json")
-     
-     tags = []
-     
-     for i in range(0, len(usuarios)):
+    usuarios: List[dict[str, Any]] = ler_json("data/usuarios.json")
+    
+    tags = []  
+
+    for i in range(0, len(usuarios)):
         usuario = usuarios[i]
-        tags = usuario.get("tags")
-        
-        
-        dados = {
-            "tags": tags
+        tags_usuario = usuario.get("tags", [])
+
+       
+        if tags_usuario:
+            tags += tags_usuario   
+
+    escrever_json(tags, "data/tags.json")
+    
+def exercicio_3():
+    usuarios: List[dict[str, Any]] = ler_json("data/usuarios.json")
+    
+    enderecos = []
+    
+    for i in range(0, len(usuarios)):
+        usuario = usuarios[i]
+        endereco = usuario.get("endereco")
+        rua = endereco.get("rua")
+        numero = endereco.get("numero")
+        bairro = endereco.get("bairro")
+        cep = endereco.get("cep")
+        uf = endereco.get("uf")
+         
+        dados =  {
+            "rua": rua,
+            "numero": numero,
+            "bairro": bairro,
+            "cep": cep,
+            "uf": uf
         }
         
+        if endereco:
+            enderecos.append(dados)
+        
+    escrever_json(enderecos, "data/enderecos.json")
+
+def exercicio_4():
+    usuarios: List[dict[str, Any]] = ler_json("data/usuarios.json")        
+
+    estados = {
+        "sp": [],
+        "rj": [],
+        "pr": [],
+        "mg": [],
+        "sc": [],
+        "rs": [],
+        "pe": [],
+        "ce": [],
+        "ba": [],
+        "am": [],
+        "df": []
+    }
+    for i in range(0, len(usuarios)):
+        usuario = usuarios[i]
+        dados_pessoais = usuario.get("dados_pessoais", {})
+        endereco = usuario.get("endereco", {})
+        
+        uf = endereco.get("uf")
+        telefone = dados_pessoais.get("telefone")
+        email = dados_pessoais.get("email")
+
+        dados = {"email": email, "telefone": telefone}
+
+        
+        if uf in estados:
+            estados[uf].append(dados)
+        else:
+            estados[uf] = [dados]
+    escrever_json(estados, "data/estados.json")
         
         
-        
-     
-     
         

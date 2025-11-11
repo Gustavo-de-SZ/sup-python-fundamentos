@@ -1,0 +1,83 @@
+{
+    "sp": [],
+    "rj": [],
+    "pr": [],
+    "mg": [],
+    "sc": [],
+    "rs": [],
+    "pe": [],
+    "ce": [],
+    "ba": [],
+    "am": [],
+    "df": [],
+    "SP": [
+        {
+            "email": "ana.silva@example.com",
+            "telefone": "+55 11 91234-5678"
+        },
+        {
+            "email": "henrique.dias@example.com",
+            "telefone": "+55 19 90001-2233"
+        }
+    ],
+    "RJ": [
+        {
+            "email": "bruno.mendes@example.com",
+            "telefone": "+55 21 99876-5432"
+        }
+    ],
+    "PR": [
+        {
+            "email": "carla.pereira@example.com",
+            "telefone": "+55 41 97777-1010"
+        }
+    ],
+    "MG": [
+        {
+            "email": "diego.alves@example.com",
+            "telefone": "+55 31 93456-1212"
+        }
+    ],
+    "SC": [
+        {
+            "email": "elisa.rocha@example.com",
+            "telefone": "+55 48 98888-0001"
+        }
+    ],
+    "RS": [
+        {
+            "email": "felipe.gomes@example.com",
+            "telefone": "+55 51 97654-3210"
+        }
+    ],
+    "PE": [
+        {
+            "email": "gabriela.souza@example.com",
+            "telefone": "+55 81 93456-7890"
+        }
+    ],
+    "CE": [
+        {
+            "email": "isabella.costa@example.com",
+            "telefone": "+55 85 98812-3456"
+        }
+    ],
+    "BA": [
+        {
+            "email": "joao.santana@example.com",
+            "telefone": "+55 71 97600-1111"
+        }
+    ],
+    "AM": [
+        {
+            "email": "karen.oliveira@example.com",
+            "telefone": "+55 92 98123-4567"
+        }
+    ],
+    "DF": [
+        {
+            "email": "lucas.freitas@example.com",
+            "telefone": "+55 61 99000-7777"
+        }
+    ]
+}

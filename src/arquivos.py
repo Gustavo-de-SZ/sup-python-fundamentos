@@ -6,7 +6,7 @@ from pathlib import Path
 def escrever_json(data: List, nome_arquivo: str):
     
     caminho = Path(nome_arquivo).resolve()
-    json_string: str = dumps(data, ensure_ascii=False)
+    json_string: str = dumps(data)
     with open(caminho, mode="w", encoding="UTF-8") as arquivo:
         arquivo.write(json_string)
         arquivo.flush()

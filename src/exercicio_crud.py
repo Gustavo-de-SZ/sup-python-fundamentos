@@ -157,7 +157,7 @@ def cadastrar_produto():
     url = "https://api.franciscosensaulas.com/api/v1/empresa/produtos"
     nome = questionary.text("Nome do produto").ask().strip()
     preco = float((questionary.text("Preço").ask() or "0").replace(",", "."))
-    categoria = questionary.text("Categoria").ask().strip()
+    categoria = questionary.select("Categoria",choices = ["Eletrônicos", "Roupas", "Alimentos", "Livros", "Outros"]).ask().strip()
     payload = {"nome": nome, "preco": preco, "categoria": categoria}
     headers = {"Content-Type": "application/json-patch+json"}
     response = requests.post(url, json=payload, headers=headers)
@@ -241,7 +241,7 @@ def listar_funcionarios():
 def cadastrar_funcionario():
     url = "https://api.franciscosensaulas.com/api/v1/trabalho/funcionarios"
     nome = questionary.text("Nome do funcionário").ask().strip()
-    cargo = questionary.text("Cargo").ask().strip()
+    cargo = questionary.select("Cargo",choices= ["Juninho", "Pleno", "Sênior", "Estagiário", "Francisco"]).ask().strip()
     salario = float((questionary.text("Salário").ask() or "0").replace(",", "."))
     payload = {"nome": nome, "cargo": cargo, "salario": salario}
     headers = {"Content-Type": "application/json-patch+json"}
@@ -282,7 +282,5 @@ def excluir_funcionario():
         print("Funcionário não encontrado.")
     else:
         print(f"Erro ao excluir funcionário\n{response.text}")
-
-
 
 

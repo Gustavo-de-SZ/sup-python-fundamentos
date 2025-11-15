@@ -3,9 +3,9 @@
 # from src import input_usuario
 # from src import variaveis
 # from src.inputs import exemplo_questionary
-from src import resolucao
-
-from src import exercicio_crud
+# from src import resolucao
+from src.orientacao_objetos import classes
+# from src import exercicio_crud
 
 def main():
     # funcoes.calcular_valor_compra_paraguai()
@@ -16,7 +16,9 @@ def main():
     # resolucao.resolver()
     # resolucao.exercicio_1()
     # exercicio_crud.crud()
-    resolucao.exercicio_4()
+    # resolucao.exercicio_4()
+    classes.menu_sistema()
+    
 
 
 

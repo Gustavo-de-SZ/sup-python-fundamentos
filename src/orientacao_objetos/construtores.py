@@ -1,7 +1,11 @@
+
+from datetime import date
+from rich.table import Table
+from rich.console import Console
 class Cachorro:
 
     def __init__(self, raca_param: str, peso: float, idade: int, cor: str = "Caramelo"):
-
+        self.raca = raca_param
         self.peso = peso
         self.idade = idade
         self.cor = cor
@@ -25,9 +29,6 @@ def exemplo_construtor_cachorro():
     print("cidade natal:", daschund.cidade_natal)
 
 
-from datetime import date
-from rich.table import Table
-from rich.console import Console
 
 
 class Passagem:
